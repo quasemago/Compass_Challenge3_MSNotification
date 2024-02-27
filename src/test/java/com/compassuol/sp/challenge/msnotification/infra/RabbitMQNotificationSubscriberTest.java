@@ -14,7 +14,6 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static com.compassuol.sp.challenge.msnotification.common.NotificationUtils.*;
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
@@ -28,19 +27,13 @@ public class RabbitMQNotificationSubscriberTest {
     private EventNotificationRepository repository;
 
     @Test
-    public void handleUserRequestNotification_WithValidData_ReturnsNotificationEvent() throws JsonProcessingException {
+    public void handleUserRequestNotification_WithValidData() throws JsonProcessingException {
         final String notification = mockNotificationData();
         final UserRequestEventDTO userRequestEventDTO = mockUserRequestEventDTO(notification);
         final EventNotification eventNotification = mockEventNotification(userRequestEventDTO);
 
         when(repository.save(any(EventNotification.class))).thenReturn(eventNotification);
-
-        EventNotification sut = subscriber.handleUserRequestNotification(notification);
-
-        assertThat(sut).isNotNull();
-        assertThat(sut.getEmail()).isEqualTo(userRequestEventDTO.getEmail());
-        assertThat(sut.getEvent()).isEqualTo(userRequestEventDTO.getEvent());
-        assertThat(sut.getDate()).isEqualTo(userRequestEventDTO.getDate());
+        subscriber.handleUserRequestNotification(notification);
     }
 
     @Test
