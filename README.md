@@ -17,6 +17,17 @@ O projeto foi desenvolvido por **Bruno Patrick Formehl Ronning**.
 | bruno.ronning.pb@compasso.com.br     | quasemago          |
 
 ## Sumário
+- [# Challenge 3 - Gerenciamento de Usuários: MSNotification (CompassUOL)](#challenge-3---gerenciamento-de-usuários-msnotification-compassuol)
+    - [Autor do Projeto](#autor-do-projeto)
+    - [Microsserviço de Notificações (MSNotification)](#microsserviço-de-notificações-msnotification)
+        - [Estrutura do banco de dados](#estrutura-do-banco-de-dados)
+        - [Regras de Negócio](#regras-de-negócio)
+      - [Payloads](#payloads)
+    - [Como executar o projeto](#como-executar-o-projeto)
+        - [Pré-configurações](#pré-configurações)
+    - [Executando o projeto (Terminal)](#executando-o-projeto-terminal)
+        - [Projeto em execução](#projeto-em-execução)
+    - [Considerações Finais](#considerações-finais)
 
 ## Tecnologias Utilizadas
 - Java JDK 17
@@ -93,8 +104,10 @@ Após a execução dos comandos acima, observe que será criado uma pasta chamad
 
 Para executar o projeto, basta executar o comando ``java -jar msnotification-1.0.jar``.
 
-### Requisitos
-Para executar o projeto, é necessário ter devidamente configurado e em execução os serviços **RabbitMQ** e **MongoDB**, conforme detalhado em [Pré-configurações](#pré-configurações).
+### Projeto em execução
+Após executar o projeto, o microsserviço de notificações estará disponível para receber notificações de eventos dos usuários, e armazená-las no banco de dados MongoDB.
+
+Essas notificações de eventos devem ser enviadas para o serviço de mensageria RabbitMQ, que por sua vez, irá encaminhar as mensagens para o microsserviço de notificações.
 
 ---
 # Considerações Finais
