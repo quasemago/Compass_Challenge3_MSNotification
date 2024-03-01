@@ -1,0 +1,18 @@
+spring:
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+  data:
+    mongodb:
+      host: ${MONGODB_HOST:localhost}
+      port: ${MONGODB_PORT:27017}
+      username: ${MONGODB_USERNAME:root}
+      password: ${MONGODB_PASSWORD:123456}
+      authentication-database: ${MONGODB_AUTHENTICATION_DATABASE:admin}
+      database: ${MONGODB_DATABASE:compasschallenge3_msnotification}
+
+mq:
+  queues:
+    user-queue: ${CHALLENGE3_MQ_USER_QUEUE:user-queue}
