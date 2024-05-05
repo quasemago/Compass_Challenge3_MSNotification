@@ -90,8 +90,8 @@ Caso você não configure as variáveis de ambiente, o projeto utilizará as con
 | RABBITMQ_USERNAME               | Usuário para conexão do RabbitMQ             | guest                            |
 | RABBITMQ_PASSWORD               | Senha do usuário para conexão do RabbitMQ    | guest                            |
 | CHALLENGE3_MQ_USER_QUEUE        | Nome da fila de mensagens do RabbitMQ        | user-queue                       |
-| MONGODB_HOST                    | Chave secreta para autenticação do Token JWT | localhost                        |
-| MONGODB_PORT                    | Host para conexão do banco MongoDB           | 27017                            |
+| MONGODB_HOST                    | Host para conexão do banco MongoDB           | localhost                        |
+| MONGODB_PORT                    | Porta para conexão do banco MongoDB          | 27017                            |
 | MONGODB_USERNAME                | Usuário para conexão do MongoDB              | root                             |
 | MONGODB_PASSWORD                | Senha do usuário para conexão do MongoDB     | 123456                           |
 | MONGODB_AUTHENTICATION_DATABASE | Database para autenticação do MongoDB        | admin                            |
